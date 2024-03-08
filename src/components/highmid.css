@@ -1,0 +1,52 @@
+
+.img-container {
+  position: relative;
+  max-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.img {
+  width: 100%; 
+  opacity: 0.5;
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+}
+
+.textomid {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 4vh;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+.highmid-container {
+  position: relative;
+  background-color: #5a849f;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .text-container {
+    left: 50%;
+    transform: translateX(-50%, -50%);
+  }
+
+  .textomid {
+    font-size: 2vh; 
+  }
+}
