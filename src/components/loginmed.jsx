@@ -1,8 +1,8 @@
-import '../components/login.css';
+import '../components/loginmed.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function Login() {
+function Loginmed() {
     const [cpf, setCpf] = useState('');
     const [senha, setSenha] = useState('');
     const navigate = useNavigate(); // Função de navegação
@@ -10,21 +10,21 @@ function Login() {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        const data = { cpf, senha };
+        const datamed = { cpf, senha };
 
         try {
-            const response = await fetch('http://localhost:5000/login', {
+            const response = await fetch('http://localhost:3000/loginmed', {
                 
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(data)
+                body: JSON.stringify(datamed)
             });
 
             if (response.ok) {
                 // Redireciona para a página de logado
-                navigate('/logado');
+                navigate('/medlogado');
             } else {
                 console.error('Falha no login');
             }
@@ -63,4 +63,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default Loginmed;

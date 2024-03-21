@@ -1,9 +1,12 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const cors = require('cors');
+
 
 const app = express();
 const PORT = 5000;
+app.use(cors());
 
 app.use((req, res, next) => {
 
@@ -25,7 +28,31 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.get('/login', (req, res) => {
 //     res.sendFile(path.join(__dirname, 'public', 'login.html'));
 // });
+app.post('/loginmed', (req, res) => {
+    const { cpf, senha } = req.body;
+    
+    fs.readFile('data.json', 'utf8', (err, datamed) => {
 
+        if (err) {
+            console.error(err);
+            res.status(500).send('Erro ao ler os dados.');
+            return;
+        }
+
+        const users = JSON.parse(datamed);
+        const user = users.find(user => user.cpf === cpf && user.senha === senha);
+
+        if (user) {
+
+            res.status(200).json({ message: 'Login bem-sucedido' });
+
+        } else {
+
+            res.status(401).json({ message: 'CPF ou senha incorretos' });
+            
+        }
+    });
+})
 
 // lidar com o login
 app.post('/login', (req, res) => {
