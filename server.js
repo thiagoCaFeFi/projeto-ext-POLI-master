@@ -20,7 +20,7 @@ app.use(express.json());
 // arquivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
-// rota para página de login
+
 
 // app.get('/login', (req, res) => {
 //     res.sendFile(path.join(__dirname, 'public', 'login.html'));

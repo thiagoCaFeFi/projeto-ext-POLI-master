@@ -1,19 +1,21 @@
-import Home from '../src/pages/Home/Home'
-import {BrowserRouter,Route,Routes} from 'react-router-dom'
-import Agendamentos from './pages/Agendamentos/Agendamentos'
-import Resultados from './pages/resultados/Resultados'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from '../src/pages/Home/Home';
+import Agendamentos from './pages/Agendamentos/Agendamentos';
+import Resultados from './pages/resultados/Resultados';
+import Logado from '../src/pages/Logado/Logado'; // Importe o componente Logado
 
 function AppRoutes() {
     return (
-        <BrowserRouter>
-        <Routes>
-            <Route path = '/' element = {<Home/>}>
-            </Route>
-            <Route path = '/agendamentos' element = {<Agendamentos/>}></Route>
-            <Route path='/resultados' element= {<Resultados/>}></Route>
-        </Routes>
-        </BrowserRouter>
-    )
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/agendamentos" element={<Agendamentos />} />
+                <Route path="/resultados" element={<Resultados />} />
+                <Route path="/logado" element={<Logado />} /> 
+            </Routes>
+        </Router>
+    );
 }
 
-export default AppRoutes
+export default AppRoutes;

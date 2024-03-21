@@ -1,9 +1,11 @@
 import '../components/login.css';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
     const [cpf, setCpf] = useState('');
     const [senha, setSenha] = useState('');
+    const navigate = useNavigate(); // Função de navegação
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -20,9 +22,8 @@ function Login() {
             });
 
             if (response.ok) {
-                
-                console.log('Login bem-sucedido');
-
+                // Redireciona para a página de logado
+                navigate('/logado');
             } else {
                 console.error('Falha no login');
             }
