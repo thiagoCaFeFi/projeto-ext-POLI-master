@@ -1,0 +1,22 @@
+.text{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.buttom {
+    border: none;
+    background-color: #007bff; /* Blue color */
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    padding: 1vh;
+    margin-left: 1vh;
+}
+
+.buttom:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+}
