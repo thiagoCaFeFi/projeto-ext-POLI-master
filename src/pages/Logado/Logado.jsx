@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './login.css';
 import Header2 from "../../components/header2.jsx";
 
+
 function Logado() {
     const [files, setFiles] = useState([]);
 
@@ -52,23 +53,25 @@ function Logado() {
             <div>
                 <Header2 />
             </div>
-            <div className="title">
-                <span>Resultados de exames mais recentes</span>
-            </div>
-            <div className='Exames-container'>
-                {/* Mapeando e exibindo a lista de arquivos disponíveis */}
-                {files.map((filename, index) => (
-                    <div key={index}>
-                        <span>{filename}</span>
-                        {/* Botão para baixar o arquivo */}
-                        <button onClick={() => downloadFile(filename)}>
-                            Baixar Arquivo
-                        </button>
-                    </div>
-                ))}
+            <div className='container-final'>
+                <div className="title">
+                    <span>Bem vindo! Resultados de exames mais recentes:</span>
+                </div>
+                <div className='Exames-container'>
+                    {/* Mapeando e exibindo a lista de arquivos disponíveis */}
+                    {files.map((filename, index) => (
+                        <div key={index}>
+                            <span>{filename}</span>
+                            {/* Botão para baixar o arquivo */}
+                            <button className='baixar' onClick={() => downloadFile(filename)}>
+                                Baixar Arquivo
+                            </button>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );
-}
+                    }    
 
 export default Logado;

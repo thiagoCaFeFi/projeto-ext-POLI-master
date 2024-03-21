@@ -2,6 +2,7 @@ import '../components/login.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 function Login() {
     const [cpf, setCpf] = useState('');
     const [senha, setSenha] = useState('');
@@ -58,6 +59,7 @@ function Login() {
                     
                     <input type="submit" value="Enviar" />
                 </form>
+                
             </div>
         </div>
     );

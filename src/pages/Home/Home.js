@@ -1,6 +1,7 @@
 import Header from '../../components/header'
 import Mid from '../../components/mid'
 import Highmid from '../../components/highmid'
+import Institucional from './institucional';
 
 function Home() {
   return (
@@ -14,7 +15,9 @@ function Home() {
       <div  >
       <Highmid/>
       </div>
-      
+      <div>
+      <Institucional/>
+      </div>
     </div>
     
   );

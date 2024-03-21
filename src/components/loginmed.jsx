@@ -35,7 +35,7 @@ function Loginmed() {
 
     return (
         <div className="login-container">
-            <h1 className='login-text'>Login</h1>
+            <h1 className='login-text'>Login Médico</h1>
             <div className="login-box">
                 <form onSubmit={handleSubmit} action="/login" method="post">
                     <label className='login-text2' htmlFor="id">id:</label>

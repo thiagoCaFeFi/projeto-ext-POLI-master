@@ -1,29 +1,34 @@
-.title{
+.container-final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    height: 100vh; /* Isso faz com que o contêiner final ocupe toda a altura da tela */
+}
+
+.title {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
     font-size: larger;
-    margin-top: 10vh;
-    margin-left: 15vh;
     margin-bottom: 2vh;
 }
 
-
-.Exames-container{
-    width: 80%; 
-    height: 40vh;
-    margin-left: 10vh;
-    max-width: 800px; 
-    padding: 20px; 
-    background-color: #f0f0f0; 
-    border-radius: 10px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-    
+.Exames-container {
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: "Poppins", sans-serif;
 }
 
-.dentro{
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: larger;
+.Exames-container > div {
+    margin-bottom: 10px; 
+}
+
+.baixar {
+    font-family: 'Poppins', sans-serif;
+    margin-left: 1vw;
 }

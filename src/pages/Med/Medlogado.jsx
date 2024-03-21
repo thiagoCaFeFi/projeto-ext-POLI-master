@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './Medlogado.css'; // Importe o arquivo CSS aqui
+import Header2 from '../../components/header2';
 
 function Medlogado() {
   const [file, setFile] = useState(null);
@@ -83,13 +85,17 @@ function Medlogado() {
 
   return (
     <div>
+      <Header2/>
+    <div className="medlogado-container">
+      <div className="section-title">Enviar Arquivo de Exame</div> {/* Adicionando título para a seção de envio de arquivo */}
       <input type="file" onChange={handleFileChange} />
-      <button onClick={handleUpload}>Enviar</button>
+      <button className="upload-button" onClick={handleUpload}>Enviar</button>
       <form onSubmit={handleSubmit}>
-        <div>Registrar paciente:</div>
+        <div className="register-title">Registrar paciente:</div>
         <div>
           <label htmlFor="cpf">CPF do paciente:</label>
           <input
+            className="input-field"
             type="text"
             id="cpf"
             value={cpf}
@@ -100,6 +106,7 @@ function Medlogado() {
         <div>
           <label htmlFor="senha">Senha:</label>
           <input
+            className="input-field"
             type="password"
             id="senha"
             value={senha}
@@ -107,8 +114,9 @@ function Medlogado() {
             required
           />
         </div>
-        <button type="submit">Enviar</button>
+        <button className="submit-button" type="submit">Enviar</button>
       </form>
+    </div>
     </div>
   );
 }

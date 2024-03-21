@@ -1,22 +1,48 @@
-.text{
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: normal;
+.container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.buttom {
-    border: none;
-    background-color: #007bff; /* Blue color */
-    color: white;
-    padding: 10px 20px;
-    cursor: pointer;
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.select {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    transition: background-color 0.3s ease;
-    padding: 1vh;
-    margin-left: 1vh;
 }
 
-.buttom:hover {
-    background-color: #0056b3; /* Darker blue color on hover */
+.date-input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
 }

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import '../../components/agendamentos.css';
 import './agen.css'
+import Header2 from '../../components/header2'
 
 function Agendamentos() {
-    const [inputText, setInputText] = useState('');
+    const [selectedOption, setSelectedOption] = useState('');
     const [selectedDate, setSelectedDate] = useState('');
 
-    const handleInputChange = (event) => {
-        setInputText(event.target.value);
+    const handleOptionChange = (event) => {
+        setSelectedOption(event.target.value);
     };
 
     const handleDateChange = (event) => {
@@ -16,35 +16,39 @@ function Agendamentos() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Handle form submission here, e.g., sending the inputText and selectedDate to a server
-        console.log("Input Text:", inputText);
+        // Handle form submission here, e.g., sending the selectedOption and selectedDate to a server
+        console.log("Selected Option:", selectedOption);
         console.log("Selected Date:", selectedDate);
     };
 
     return (
-        
-        <div className="container-esquerda">
-            <div className='text'>
+        <div>
+            <Header2/>
+        <div className="container">
+            
+                
+            
+            <div className='header'>
                 <h1>Agendamento</h1>
             </div>
-            <form onSubmit={handleSubmit}>
-                <input 
-                    type="text" 
-                    value={inputText} 
-                    onChange={handleInputChange} 
-                    placeholder="nome do exame..." 
-                />
+            <form onSubmit={handleSubmit} className="form">
+                <select value={selectedOption} onChange={handleOptionChange} className="select">
+                    <option value="">Selecione o exame...</option>
+                    <option value="Exame de Sangue">Exame de Sangue</option>
+                    <option value="Raio-X">Raio-X</option>
+                    <option value="Ultrassom">Ultrassom</option>
+                    {/* Adicione mais opções conforme necessário */}
+                </select>
                 <input 
                     type="date" 
                     value={selectedDate} 
                     onChange={handleDateChange} 
+                    className="date-input"
                 />
-                <button className='buttom' type="submit">Enviar</button>
+                <button className='button' type="submit">Enviar</button>
             </form>
-        </div>
-        
+        </div></div>
     );
 }
 
 export default Agendamentos;
-
