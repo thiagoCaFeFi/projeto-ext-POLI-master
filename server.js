@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const cors = require('cors');
-
+const multer = require('multer');
 const app = express();
 const PORT = 5000;
 app.use(cors());
@@ -16,6 +16,28 @@ app.use((req, res, next) => {
     next();
 });
 
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'upload/');
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname);
+    }
+});
+const upload = multer({ storage: storage });
+
+app.post('/upload', upload.single('file'), (req, res) => {
+    if (!req.file) {
+        return res.status(400).json({ error: 'Nenhum arquivo foi enviado' });
+    }
+
+    // Processar o arquivo conforme necessário
+    console.log('Arquivo recebido:', req.file);
+
+    // Responder ao cliente com uma mensagem de sucesso
+    res.status(200).json({ message: 'Arquivo recebido com sucesso' });
+});
 // Endpoint para listar arquivos disponíveis
 app.get('/files', (req, res) => {
     const uploadDir = path.join(__dirname, 'upload');
