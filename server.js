@@ -29,9 +29,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 //     res.sendFile(path.join(__dirname, 'public', 'login.html'));
 // });
 app.post('/loginmed', (req, res) => {
-    const { cpf, senha } = req.body;
+    const { id, senhamed } = req.body;
     
-    fs.readFile('data.json', 'utf8', (err, datamed) => {
+    fs.readFile('data.json', 'utf8', (err, data) => {
 
         if (err) {
             console.error(err);
@@ -39,8 +39,8 @@ app.post('/loginmed', (req, res) => {
             return;
         }
 
-        const users = JSON.parse(datamed);
-        const user = users.find(user => user.cpf === cpf && user.senha === senha);
+        const users = JSON.parse(data);
+        const user = users.find(user => user.id === id && user.senhamed === senhamed);
 
         if (user) {
 

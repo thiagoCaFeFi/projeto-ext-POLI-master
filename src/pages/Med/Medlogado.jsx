@@ -3,7 +3,7 @@ import React from 'react';
 function Medlogado() {
     return (
         <div>
-            <h1>Página Logado</h1>
+            <h1>Página Médico Logado</h1>
         </div>
     );
 }
