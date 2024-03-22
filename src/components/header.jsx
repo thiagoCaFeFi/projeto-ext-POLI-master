@@ -25,6 +25,6 @@ function Header() {
                 <button className='Not'>Notícias</button>  
                 </div>
             </div>
-        </header>
-    )
+        </header> //iomml
+    )       
 } export default Header
